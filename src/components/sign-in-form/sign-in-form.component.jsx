@@ -30,7 +30,11 @@ const SignInForm = () => {
             resetFormFields();
             console.log(response);
         }catch(e){
-
+            switch(e.code){
+                case 'auth/wrong-password': alert('wrong password'); break;
+                case 'auth/user-not-found': alert('user not found'); break;
+            }
+            console.log(e)
         }
     }
 
