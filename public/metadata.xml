@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0"
+	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZGIMS_CASE_MGT_SRV" xml:lang="en" sap:schema-version="1"
+			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="GemsIssue" sap:label="GIMS Issues" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="Age" Type="Edm.Int32" sap:unicode="false" sap:label="Age (Days)" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="MobileApp" Type="Edm.Boolean" sap:unicode="false" sap:label="By Mobile App" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="CapabilityImpactDesc" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Impacted Capability (Y/N)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="AgeBand" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Age Band" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Arbpl" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Work center" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Aufnr" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Order" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Background" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Checkbox" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="BaseDescr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Property Name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="BmName" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Base Manager Name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="BsaName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="BSA Description" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="CapabilityImpact" Type="Edm.Boolean" sap:unicode="false" sap:label="Impacted Capability" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CapaCurrNotes" Type="Edm.String" sap:unicode="false" sap:label="Notes Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CapaNotes" Type="Edm.String" sap:unicode="false" sap:label="Notes Text" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CapImpact" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Capability Impact" sap:value-list="fixed-values"/>
+				<Property Name="CapRegister" Type="Edm.Boolean" sap:unicode="false" sap:label="Capability Register"/>
+				<Property Name="CapText" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Capability Impact Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CaseGuid" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Case Key" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CaseTitle" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Issue Title" sap:updatable="false"/>
+				<Property Name="CaseTitleUpper" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CaseType" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Case Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CatDescr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Category" Type="Edm.String" MaxLength="4" sap:field-control="FcState" sap:unicode="false" sap:label="Risk Impact Category" sap:filterable="false"/>
+				<Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="ChangeTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Changed On" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="ClosedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Closed By" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="ClosedDate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Closed Date" sap:creatable="false"/>
+				<Property Name="ClosingTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Closed At" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="ClosureCheck" Type="Edm.Boolean" sap:unicode="false" sap:label="Closure Confirmed?" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="CreateTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created On" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="CurrentNotes" Type="Edm.String" sap:unicode="false" sap:label="Issue Responses" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DescHtml" Type="Edm.String" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DispOnlyAuth" Type="Edm.Boolean" sap:unicode="false" sap:label="Boolean Variable (X=true, -=false, space=unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRec2" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 2" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRec3" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 3" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRec4" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 4" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRec5" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 5" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRec6" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 6" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EmailRecpt1" Type="Edm.String" MaxLength="240" sap:unicode="false" sap:label="Receipient 1" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Equnr" Type="Edm.String" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EscalNotify" Type="Edm.Boolean" sap:unicode="false" sap:label="Notified Escalation" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="EscalReason" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Escalation Reason" sap:sortable="false" sap:filterable="false" sap:value-list="fixed-values"/>
+				<Property Name="EscReasonDescr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Escalation Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Etag" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Hash Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Issue ID" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="ExtRef" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="External refer." sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Favourite" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Template" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="FcState" Type="Edm.Byte" sap:unicode="false" sap:label="Byte" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="FcStateRoot" Type="Edm.Byte" sap:unicode="false" sap:label="Byte" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="GimsBsa" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Base Support Area" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsPriority" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:value-list="fixed-values"/>
+				<Property Name="GimsUnit" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Unit" sap:filterable="false" sap:value-list="fixed-values"/>
+				<Property Name="GimsZone" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Zone" sap:value-list="fixed-values"/>
+				<Property Name="Historical" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Historical" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="IconNote" Type="Edm.String" MaxLength="20" sap:unicode="false" sap:label="Notes" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ImpactCategory" Type="Edm.String" MaxLength="255" sap:field-control="FcState" sap:unicode="false" sap:label="Risk Impact Category" sap:sortable="false" sap:value-list="fixed-values"/>
+				<Property Name="ImpactDescr" Type="Edm.String" sap:unicode="false" sap:label="Risk Impact CategoryText" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Incident" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Incident ID" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="IssueDescr" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Issue Description" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Contractor" sap:value-list="fixed-values"/>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="MultiFloc" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:sortable="false" sap:filterable="false"/>
+				<Property Name="MultiProduct" Type="Edm.Boolean" sap:unicode="false" sap:label="Multi Product" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NewNote" Type="Edm.String" Nullable="false" sap:field-control="FcState" sap:unicode="false" sap:label="Issue Response Update" sap:creatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ObjFolderId" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Folder Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Obrid" Type="Edm.String" MaxLength="15" sap:unicode="false" sap:label="Obj Id" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="OpenDate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Open Date" sap:updatable="false"/>
+				<Property Name="PlanEndDate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Action-by Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PrioDescr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Priority Description" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Processor" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Assigned-to" sap:sortable="false"/>
+				<Property Name="ProcessorName" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Assigned to Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ProdDescr" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Product Description" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Product" sap:value-list="fixed-values"/>
+				<Property Name="ProfileId" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Status Profile" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Project" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Project Number" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Qmnum" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ReasonCode" Type="Edm.String" MaxLength="4" sap:field-control="FcStateRoot" sap:unicode="false" sap:label="Issue Category" sap:sortable="false" sap:value-list="fixed-values"/>
+				<Property Name="ReasonDescr" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Issue Category Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Region" Type="Edm.String" MaxLength="13" sap:unicode="false" sap:label="Region" sap:filterable="false"/>
+				<Property Name="RepByName" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Reported by Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ReportedBy" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Raised By" sap:updatable="false"/>
+				<Property Name="ResponseHtml" Type="Edm.String" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Responsible" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Base Manager" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="SecureLevel" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Auth. Level" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="SendEmail" Type="Edm.Boolean" sap:unicode="false" sap:label="Send E-mail" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="SentinelNo" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Sentinel ID" sap:sortable="false"/>
+				<Property Name="ServiceGrp" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Service Group" sap:value-list="fixed-values"/>
+				<Property Name="Siteid" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Estate Business Identifier" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="StatLine" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="System Status" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StatObjnr" Type="Edm.Guid" sap:unicode="false" sap:label="Object GUID" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StatOrderno" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:value-list="fixed-values"/>
+				<Property Name="StatOrdnoDescr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Status Description" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<Property Name="StatPara" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="System Status" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StatUserLine" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="User Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Property" sap:updatable="false"/>
+				<Property Name="UnitDescr" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Unit Description" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="VendorLogin" Type="Edm.Boolean" sap:unicode="false" sap:label="Boolean Variable (X=true, -=false, space=unknown)" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="VendorName" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Contractor Name" sap:creatable="false" sap:updatable="false" sap:filterable="false"/>
+				<NavigationProperty Name="LinkedObjSet" Relationship="ZGIMS_CASE_MGT_SRV.CaseLinkedObj" FromRole="FromRole_CaseLinkedObj" ToRole="ToRole_CaseLinkedObj"/>
+				<NavigationProperty Name="IssueNote" Relationship="ZGIMS_CASE_MGT_SRV.CaseIssueNote" FromRole="FromRole_CaseIssueNote" ToRole="ToRole_CaseIssueNote"/>
+				<NavigationProperty Name="ChangeLogSet" Relationship="ZGIMS_CASE_MGT_SRV.CaseChangeLog" FromRole="FromRole_CaseChangeLog" ToRole="ToRole_CaseChangeLog"/>
+			</EntityType>
+			<EntityType Name="VH_Priority" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Priority"/>
+				</Key>
+				<Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="Description" sap:unicode="false" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Text, 40 Characters Long" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Category" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Category"/>
+				</Key>
+				<Property Name="Category" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="Description" sap:unicode="false" sap:label="Risk Impact Category" sap:sortable="false" sap:filterable="false" sap:value-list="fixed-values"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Text" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_EsReason" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="EscalReason"/>
+				</Key>
+				<Property Name="EscalReason" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="Description" sap:unicode="false" sap:label="Escalation Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Reason" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ReasonCode"/>
+				</Key>
+				<Property Name="ReasonCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:text="Description" sap:unicode="false" sap:label="Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="LinkedObj" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ObjType"/>
+					<PropertyRef Name="ObjectId"/>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CaseGuid" Type="Edm.Guid" sap:unicode="false" sap:label="Case Key" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ObjType" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="GIMS Object Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ObjectId" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="GIMS Linkec object id" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CreatedDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Created Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ObjComment" Type="Edm.String" MaxLength="256" sap:unicode="false" sap:label="Obj. Comment" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Case ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="UpdatedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DeletedDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Date Deleted" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Tcode" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Transaction Code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="IssueNote" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="CurrentNotes" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Issue Responses" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Case ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="BtnConf" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="StatPara"/>
+					<PropertyRef Name="StatOrderno"/>
+					<PropertyRef Name="ButtonId"/>
+				</Key>
+				<Property Name="StatPara" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="System Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StatOrderno" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ButtonId" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Button ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Show" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Status" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="StatOrderno"/>
+				</Key>
+				<Property Name="StatOrderno" Type="Edm.String" Nullable="false" MaxLength="2" sap:text="StatOrdnoDescr" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StatOrdnoDescr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Status Descr." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="ChangeLog" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="ChangeDate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Case ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ChangeTime" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Time" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Xuser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="UserName" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ActId" Type="Edm.String" Nullable="false" MaxLength="32" sap:unicode="false" sap:label="Activity - ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Activity" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Activity" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="OldValue" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Old Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="OldValueTxt" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="Old Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NewValue" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="New Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NewValueTxt" Type="Edm.String" Nullable="false" MaxLength="128" sap:unicode="false" sap:label="New Value" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Attribute" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Attribute Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="AttributeTxt" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Attribute Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="DashExec" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Chart"/>
+				</Key>
+				<Property Name="Chart" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Chart" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Dimensions" Type="Edm.String" sap:unicode="false" sap:label="JSON string" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Json" Type="Edm.String" sap:unicode="false" sap:label="JSON string" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Measures" Type="Edm.String" sap:unicode="false" sap:label="JSON string" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="KPI_Case" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="KpiKey"/>
+				</Key>
+				<Property Name="Age" Type="Edm.Int32" sap:unicode="false" sap:label="Age" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CapabilityImpact" Type="Edm.Boolean" sap:unicode="false" sap:label="Impacted Capability" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CreatedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Created By" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BmName" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Base Manager Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CreateTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ChangedBy" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Changed By" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="OpenDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Open Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BaseDescr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ChangeTime" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CapRegister" Type="Edm.Boolean" sap:unicode="false" sap:label="Capability Register" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ClosedDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Closed Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BsaName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ImpactCategory" Type="Edm.String" MaxLength="255" sap:unicode="false" sap:label="Impact Category" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CapImpact" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Capability Impact" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="MobileApp" Type="Edm.Boolean" sap:unicode="false" sap:label="By Mobile App" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="CaseTitle" Type="Edm.String" MaxLength="80" sap:unicode="false" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PlanEndDate" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Planned Close Date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Processor" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Processor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="UnitDescr" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Unit Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsPriority" Type="Edm.String" MaxLength="1" sap:unicode="false" sap:label="Priority" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Case ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="KpiKey" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Responsible" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Person Respons." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="EscalReason" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Escalation Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsBsa" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Base Service Area" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="KpiName" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="KPI" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Category" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Category" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Value" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Value" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="StatOrderno" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ReasonCode" Type="Edm.String" MaxLength="4" sap:unicode="false" sap:label="Reason" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Tplnr" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Product" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Product" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Arbpl" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Work center" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ReportedBy" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Reported By" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Siteid" Type="Edm.String" MaxLength="30" sap:unicode="false" sap:label="Sort field" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Region" Type="Edm.String" MaxLength="13" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsUnit" Type="Edm.String" MaxLength="8" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsZone" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Zone" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ServiceGrp" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Service Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="SentinelNo" Type="Edm.String" MaxLength="100" sap:unicode="false" sap:label="Sentinel ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Base" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Base"/>
+				</Key>
+				<Property Name="Base" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="BaseManagerId" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="BM User ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="NameTextc" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Eqfnr" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sort field" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="State" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Region" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="GimsZone" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Zone" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Equi" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Equnr"/>
+				</Key>
+				<Property Name="Equnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Equipment" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Eqktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="PostCode1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="City1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Street" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Street" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="HouseNum1" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="House Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Eqfnr" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sort field" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Group" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ServiceGrp"/>
+				</Key>
+				<Property Name="ServiceGrp" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Description" sap:unicode="false" sap:label="Service Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Service/Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Incident" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Id"/>
+				</Key>
+				<Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="39" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="PlantId" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Plant ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DbKey" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="NodeID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Incident ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="StatusDesc" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Status" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="PlantDesc" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Plant Desc." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Title" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Notification" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Qmnum"/>
+				</Key>
+				<Property Name="Qmnum" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Qmart" Type="Edm.String" MaxLength="2" sap:unicode="false" sap:label="Notifictn type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Qmtxt" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Qmdat" Type="Edm.DateTime" Precision="7" sap:unicode="false" sap:label="Notif.date" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Person" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Pernr"/>
+				</Key>
+				<Property Name="Pernr" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Personnel no." sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Nchmc" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Last name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Vnamc" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="First name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Begda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Start Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Endda" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="End Date" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Cname" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Product" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Product"/>
+				</Key>
+				<Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Description" sap:unicode="false" sap:label="Product" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Matkl" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Project" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExternalId"/>
+				</Key>
+				<Property Name="Guid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ObjectType" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Object Type" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ExternalId" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Project Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Text1" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Version" Type="Edm.String" Nullable="false" MaxLength="24" sap:unicode="false" sap:label="Version" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Langu" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Language" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Property" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Tplnr"/>
+				</Key>
+				<Property Name="Tplnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Eqfnr" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Sort field" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Pltxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Sort1" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 1" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Sort2" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Search Term 2" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="McCity1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Responsible" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Bname"/>
+				</Key>
+				<Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="McNamelas" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Last name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="McNamefir" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="First name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Department" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Building code" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Roomnumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Room Number" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="TelExtens" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Extension" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Cost center" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="InhouseMl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Internal mail" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Company" Type="Edm.String" Nullable="false" MaxLength="42" sap:unicode="false" sap:label="Company" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="McName1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="McCity1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Idadtype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Identity Add. Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Unit" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Base"/>
+					<PropertyRef Name="UnitId"/>
+				</Key>
+				<Property Name="Base" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="UnitId" Type="Edm.String" Nullable="false" MaxLength="8" sap:text="Description" sap:unicode="false" sap:label="Object ID" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ShortName" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Unit Short Name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Unit Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="ServiceGrp" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Service Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Draft" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Draft" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Vendor" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Lifnr"/>
+				</Key>
+				<Property Name="Sortl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Search term" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Land1" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Country" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Pstlz" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Mcod3" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="City" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Mcod1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Loevm" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Deletion flag" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Zone" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="GimsZone"/>
+				</Key>
+				<Property Name="GimsZone" Type="Edm.String" Nullable="false" MaxLength="10" sap:text="Description" sap:unicode="false" sap:label="Zone" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="FileAttach" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Value" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="ExtKey" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_Workorder" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Aufnr"/>
+				</Key>
+				<Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Order" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Ktext" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Erdat" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Created on" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Qmnum" Type="Edm.String" MaxLength="12" sap:unicode="false" sap:label="Notification" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="VH_BaseProduct" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Base"/>
+					<PropertyRef Name="SerialNo"/>
+				</Key>
+				<Property Name="Base" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="SerialNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Serial Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Product" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Product" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Lifnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Matkl" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="DescriptionUpper" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Product Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_ProdContractor" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Base"/>
+					<PropertyRef Name="SerialNo"/>
+				</Key>
+				<Property Name="Base" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Functional loc." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="SerialNo" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Serial Number" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Product" Type="Edm.String" MaxLength="10" sap:unicode="false" sap:label="Product" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Lifnr" Type="Edm.String" MaxLength="10" sap:text="Name1" sap:unicode="false" sap:label="Vendor" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Matkl" Type="Edm.String" MaxLength="9" sap:unicode="false" sap:label="Material Group" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Description" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Short Descript." sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="DescriptionUpper" Type="Edm.String" MaxLength="60" sap:unicode="false" sap:label="Product Description" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Name1" Type="Edm.String" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+				<Property Name="Inactive" Type="Edm.Boolean" sap:unicode="false" sap:label="Inactive" sap:creatable="false" sap:updatable="false" sap:sortable="false"/>
+			</EntityType>
+			<EntityType Name="ObjAttach" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Filename"/>
+				</Key>
+				<Property Name="Filename" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Value" Type="Edm.Binary" Nullable="false" sap:unicode="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Mimetype" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Description" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Text" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Case ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="Obrid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_CapaImpact" sap:semantics="fixed-values" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="CapImpact"/>
+				</Key>
+				<Property Name="CapImpact" Type="Edm.String" Nullable="false" MaxLength="1" sap:text="CapText" sap:unicode="false" sap:label="Capability Impact" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="CapText" Type="Edm.String" MaxLength="40" sap:unicode="false" sap:label="Capability Impact Tx" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="IssuePdf" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ExtKey"/>
+				</Key>
+				<Property Name="ExtKey" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<EntityType Name="VH_User" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Bname"/>
+				</Key>
+				<Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="User" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="NameFirst" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="First name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="NameLast" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Last name" sap:creatable="false" sap:updatable="false"/>
+				<Property Name="NameText" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:label="Full name" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+				<Property Name="SmtpAddr" Type="Edm.String" Nullable="false" MaxLength="241" sap:unicode="false" sap:label="E-Mail Address" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+			</EntityType>
+			<Association Name="CaseChangeLog" sap:content-version="1">
+				<End Type="ZGIMS_CASE_MGT_SRV.GemsIssue" Multiplicity="0..1" Role="FromRole_CaseChangeLog"/>
+				<End Type="ZGIMS_CASE_MGT_SRV.ChangeLog" Multiplicity="*" Role="ToRole_CaseChangeLog"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CaseChangeLog">
+						<PropertyRef Name="ExtKey"/>
+					</Principal>
+					<Dependent Role="ToRole_CaseChangeLog">
+						<PropertyRef Name="ExtKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CaseLinkedObj" sap:content-version="1">
+				<End Type="ZGIMS_CASE_MGT_SRV.GemsIssue" Multiplicity="0..1" Role="FromRole_CaseLinkedObj"/>
+				<End Type="ZGIMS_CASE_MGT_SRV.LinkedObj" Multiplicity="*" Role="ToRole_CaseLinkedObj"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CaseLinkedObj">
+						<PropertyRef Name="ExtKey"/>
+					</Principal>
+					<Dependent Role="ToRole_CaseLinkedObj">
+						<PropertyRef Name="ExtKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="CaseIssueNote" sap:content-version="1">
+				<End Type="ZGIMS_CASE_MGT_SRV.GemsIssue" Multiplicity="0..1" Role="FromRole_CaseIssueNote"/>
+				<End Type="ZGIMS_CASE_MGT_SRV.IssueNote" Multiplicity="*" Role="ToRole_CaseIssueNote"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_CaseIssueNote">
+						<PropertyRef Name="ExtKey"/>
+					</Principal>
+					<Dependent Role="ToRole_CaseIssueNote">
+						<PropertyRef Name="ExtKey"/>
+					</Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZGIMS_CASE_MGT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+				<EntitySet Name="GemsIssueSet" EntityType="ZGIMS_CASE_MGT_SRV.GemsIssue" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+				<EntitySet Name="VH_PrioritySet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Priority" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_CategorySet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Category" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_EsReasonSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_EsReason" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ReasonSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Reason" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="LinkedObjSet" EntityType="ZGIMS_CASE_MGT_SRV.LinkedObj" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="IssueNoteSet" EntityType="ZGIMS_CASE_MGT_SRV.IssueNote" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="BtnConfSet" EntityType="ZGIMS_CASE_MGT_SRV.BtnConf" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_StatusSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Status" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="ChangeLogSet" EntityType="ZGIMS_CASE_MGT_SRV.ChangeLog" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="DashExecSet" EntityType="ZGIMS_CASE_MGT_SRV.DashExec" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="KPI_CaseSet" EntityType="ZGIMS_CASE_MGT_SRV.KPI_Case" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_BaseSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Base" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_EquiSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Equi" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_GroupSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Group" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_IncidentSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Incident" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_NotificationSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Notification" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_PersonSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Person" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ProductSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Product" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ProjectSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Project" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_PropertySet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Property" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ResponsibleSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Responsible" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_UnitSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Unit" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_VendorSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Vendor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ZoneSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Zone" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="FileAttachSet" EntityType="ZGIMS_CASE_MGT_SRV.FileAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_WorkorderSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_Workorder" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_BaseProductSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_BaseProduct" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_ProdContractorSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_ProdContractor" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="ObjAttachSet" EntityType="ZGIMS_CASE_MGT_SRV.ObjAttach" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_CapaImpactSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_CapaImpact" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<EntitySet Name="IssuePdfSet" EntityType="ZGIMS_CASE_MGT_SRV.IssuePdf" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<EntitySet Name="VH_UserSet" EntityType="ZGIMS_CASE_MGT_SRV.VH_User" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+				<AssociationSet Name="CaseLinkedObjSet" Association="ZGIMS_CASE_MGT_SRV.CaseLinkedObj" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="GemsIssueSet" Role="FromRole_CaseLinkedObj"/>
+					<End EntitySet="LinkedObjSet" Role="ToRole_CaseLinkedObj"/>
+				</AssociationSet>
+				<AssociationSet Name="CaseIssueNoteSet" Association="ZGIMS_CASE_MGT_SRV.CaseIssueNote" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="GemsIssueSet" Role="FromRole_CaseIssueNote"/>
+					<End EntitySet="IssueNoteSet" Role="ToRole_CaseIssueNote"/>
+				</AssociationSet>
+				<AssociationSet Name="CaseChangeLogSet" Association="ZGIMS_CASE_MGT_SRV.CaseChangeLog" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="GemsIssueSet" Role="FromRole_CaseChangeLog"/>
+					<End EntitySet="ChangeLogSet" Role="ToRole_CaseChangeLog"/>
+				</AssociationSet>
+			</EntityContainer>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/CurrentNotes"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.MultiLineText"/>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/NewNote"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.MultiLineText"/>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/IssueDescr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.MultiLineText"/>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Tplnr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Property"/>
+						<PropertyValue Property="CollectionPath" String="VH_BaseSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Base"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Tplnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Pltxt"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BaseDescr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="BaseManagerId"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Responsible"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="NameTextc"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BmName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="GimsZone"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="GimsZone"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Eqfnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="City1"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="State"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Street"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Responsible"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Responsible"/>
+						<PropertyValue Property="CollectionPath" String="VH_ResponsibleSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Bname"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Responsible"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="McNamelas"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="BmName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="McNamefir"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Department"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Processor"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Responsible"/>
+						<PropertyValue Property="CollectionPath" String="VH_UserSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Bname"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Processor"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+									<PropertyValue Property="ValueListProperty" String="NameLast"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath=""/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+									<PropertyValue Property="ValueListProperty" String="NameFirst"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath=""/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="NameText"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ProcessorName"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="SmtpAddr"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+					<Collection>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="ExtKey"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="CaseTitle"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="BaseDescr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Tplnr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="UnitDescr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="ProdDescr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="BmName"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="StatOrdnoDescr"/>
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="PrioDescr"/>
+						</Record>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/MultiFloc"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Property"/>
+						<PropertyValue Property="CollectionPath" String="VH_PropertySet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Tplnr"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="MultiFloc"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Eqfnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Pltxt"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Sort1"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Sort2"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="McCity1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/GimsPriority"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Priority"/>
+						<PropertyValue Property="CollectionPath" String="VH_PrioritySet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Priority"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="GimsPriority"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/ImpactCategory"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Category"/>
+						<PropertyValue Property="CollectionPath" String="VH_CategorySet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Category"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ImpactCategory"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.VH_Category/Category"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Risk Impact Category"/>
+						<PropertyValue Property="CollectionPath" String="VH_CategorySet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Category"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Category"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/EscalReason"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Category"/>
+						<PropertyValue Property="CollectionPath" String="VH_EsReasonSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="EscalReason"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="EscalReason"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/ServiceGrp"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Service/Group"/>
+						<PropertyValue Property="CollectionPath" String="VH_GroupSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="ServiceGrp"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ServiceGrp"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Inactive"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Inactive"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/GimsZone"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Zone"/>
+						<PropertyValue Property="CollectionPath" String="VH_ZoneSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="GimsZone"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="GimsZone"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Inactive"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Inactive"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/ReasonCode"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Reason"/>
+						<PropertyValue Property="CollectionPath" String="VH_ReasonSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="ReasonCode"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="ReasonCode"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/GimsUnit"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Unit"/>
+						<PropertyValue Property="CollectionPath" String="VH_UnitSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+									<PropertyValue Property="ValueListProperty" String="Base"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Tplnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="UnitId"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="GimsUnit"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Inactive"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Inactive"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="ServiceGrp"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Product"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Product"/>
+						<PropertyValue Property="CollectionPath" String="VH_ProductSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Product"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Product"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Inactive"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Inactive"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Description"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Lifnr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Contractor ID"/>
+						<PropertyValue Property="CollectionPath" String="VH_ProdContractorSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterIn">
+									<PropertyValue Property="ValueListProperty" String="Base"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Tplnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="Lifnr"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Lifnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Name1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/StatOrderno"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Status"/>
+						<PropertyValue Property="CollectionPath" String="VH_StatusSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="StatOrderno"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="StatOrderno"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="StatOrdnoDescr"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="StatOrdnoDescr"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/CapImpact"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="CapImpact"/>
+						<PropertyValue Property="CollectionPath" String="VH_CapaImpactSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="CapImpact"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CapImpact"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterOut">
+									<PropertyValue Property="ValueListProperty" String="CapText"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="CapText"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Qmnum"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Notification"/>
+						<PropertyValue Property="CollectionPath" String="VH_NotificationSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Qmnum"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Qmnum"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Qmart"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Qmtxt"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Qmdat"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Project"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Project"/>
+						<PropertyValue Property="CollectionPath" String="VH_ProjectSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="ExternalId"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Project"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Text1"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Version"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="ObjectType"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Incident"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Incident"/>
+						<PropertyValue Property="CollectionPath" String="VH_IncidentSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Id"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Incident"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Title"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="StatusDesc"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Equnr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="Equipment"/>
+						<PropertyValue Property="CollectionPath" String="VH_EquiSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Equnr"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Equnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Eqktx"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Eqfnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="City1"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Street"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="PostCode1"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="ZGIMS_CASE_MGT_SRV.GemsIssue/Aufnr"
+				xmlns="http://docs.oasis-open.org/odata/ns/edm">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record Type="com.sap.vocabularies.Common.v1.ValueListType">
+						<PropertyValue Property="Label" String="WorkOrder"/>
+						<PropertyValue Property="CollectionPath" String="VH_WorkorderSet"/>
+						<PropertyValue Property="SearchSupported" Bool="true"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut">
+									<PropertyValue Property="ValueListProperty" String="Aufnr"/>
+									<PropertyValue Property="LocalDataProperty" PropertyPath="Aufnr"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Ktext"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Erdat"/>
+								</Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly">
+									<PropertyValue Property="ValueListProperty" String="Qmnum"/>
+								</Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations>
+			<atom:link rel="self" href="http://saprd21.dcb.defence.gov.au:3276/sap/opu/odata/SAP/ZGIMS_CASE_MGT_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/>
+				<atom:link rel="latest-version" href="http://saprd21.dcb.defence.gov.au:3276/sap/opu/odata/SAP/ZGIMS_CASE_MGT_SRV/$metadata"
+					xmlns:atom="http://www.w3.org/2005/Atom"/>
+				</Schema>
+			</edmx:DataServices>
+		</edmx:Edmx>
