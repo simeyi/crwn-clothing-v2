@@ -13,9 +13,9 @@ const CheckoutItem = ( {cartItem} ) => {
             </div>
             <span className='name'>{name}</span>
             <span className='quantity'>
-                <div onClick={()=>removeItemToCart(cartItem)}>&#60;</div>
+                <div className='div-pointer' onClick={()=>removeItemToCart(cartItem)}>&#60;</div>
                 <span className='value'>{quantity}</span>
-                <div onClick={()=>addItemToCart(cartItem)}>&#62;</div>
+                <div className='div-pointer' onClick={()=>addItemToCart(cartItem)}>&#62;</div>
             </span>
             <span className='price'>${price}</span>
             <div onClick={()=>removeItem(cartItem)} className='remove-button'>&#10005;</div>
