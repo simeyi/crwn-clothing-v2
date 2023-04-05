@@ -11,7 +11,7 @@ const CartDropdown = () => {
     const navigate = useNavigate();
 
     const goToCheckoutHandler = () => {
-        navigate('/checkout');
+        navigate('/checkout',{state:{param1:'test'}});
     }
 
     const{cartItems} = useContext(CartContext);

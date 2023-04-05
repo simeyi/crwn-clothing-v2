@@ -2,9 +2,12 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/cart.context';
 import CheckoutItem from '../../components/checkout-item/checkout-item.component';
 import './checkout.styles.scss';
+import { useLocation } from 'react-router-dom';
 
 const Checkout = () => {
-    const { cartItems, cartTotal } = useContext(CartContext);
+    const{state} = useLocation();
+    console.log(state);
+        const { cartItems, cartTotal } = useContext(CartContext);
 
     return(
         <div className='checkout-container'>
